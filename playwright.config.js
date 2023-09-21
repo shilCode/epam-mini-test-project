@@ -36,6 +36,15 @@ module.exports = defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name:"setup",
+      testMatch:"setup.js"
+    },
+    {
+      name:"smoke",
+      dependencies:["setup"],
+      testMatch:"test.spec.js"
+    },
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },

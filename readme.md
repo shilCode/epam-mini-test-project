@@ -46,5 +46,4 @@ things to lookout for while working with playwright
             test('should open a page', async ({ page }) => {...}); 
             });`
 
-            
-- consider retry for flakiness
+ - look at the config file and how setup file is linked 

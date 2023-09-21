@@ -1,22 +1,29 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
 
-test('has title', async ({ page }) => {
-  await page.goto('');
+test.describe('simple test suite',()=>{
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/EPAM | Software Engineering & Product Development Services/);
-});
+  test.use({storageState:"accept_cookie.json"})
 
-test('can view hamburger menu', async ({ page }) => {
+  test.beforeEach(async ({page})=>{
+    await page.goto('');
+  })
 
-  await page.goto('');
+  test('has title', async ({ page }) => {
+    
+    await expect(page).toHaveTitle(/EPAM | Software Engineering & Product Development Services/);
+  });
+  
+  test('can view hamburger menu', async ({ page }) => {
+  
+    const hamburger = '[class="hamburger-menu__button"]'
+  
+    await page.locator(hamburger).click()
+  
+    await expect(page.locator(hamburger)).toBeVisible();
+   
+  
+  });
+})
 
-  const hamburger = '[class="hamburger-menu__button"]'
 
-  await page.locator(hamburger).click()
-
-  await expect(page.locator(hamburger)).toBeVisible();
- 
-
-});
