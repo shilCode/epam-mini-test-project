@@ -24,6 +24,17 @@ test.describe('simple test suite',()=>{
    
   
   });
+
+  test('intentional failed test-case', async ({ page }) => {
+  
+    const hamburger = '[class="hamburger-menu__button"]'
+  
+    await page.locator(hamburger).click()
+  
+    await expect(page.locator(hamburger)).toBeHidden()
+   
+  
+  });
 })
 
 
