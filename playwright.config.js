@@ -29,7 +29,8 @@ module.exports = defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    baseURL:"https://www.epam.com/"
+    baseURL:"https://www.epam.com/",
+    headless:false
   },
   
 
