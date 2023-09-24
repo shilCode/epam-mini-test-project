@@ -2,6 +2,8 @@
 
 things to lookout for while working with playwright
 
+
+
 - test.use() is really powerful, to skip/config on the fly
        ` Specifies options or fixtures to use in a single test file or a test.describe() group. Most useful to set an option, for example set locale to configure context fixture
 
